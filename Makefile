@@ -21,13 +21,16 @@ linux:
 	GOARCH=amd64 GOOS=linux go build -o kbot-linux main.go 
 	
 arm:
-	GOARCH=amd64 GOOS=linux go build -o kbot-arm main.go
+	GOARCH=amd64 GOOS=arm go build -o kbot-arm main.go
 
 macos:
-	GOARCH=amd64 GOOS=linux go build -o kbot-macos main.go
+	GOARCH=amd64 GOOS=macos go build -o kbot-macos main.go
 
 windows:
-	GOARCH=amd64 GOOS=linux go build -o kbot-windows main.go
+	GOARCH=amd64 GOOS=windows go build -o kbot-windows main.go
+
+build: format
+    CGO_ENABLED=0 GOARCH=${shell dpkg --print-architecture} go build -v -o kbot -ldflags "-X="github.com/ivanloktionov/kbot/cmd.appVersion=${VERSION}
 
 image: 
 	docker build . -t ${DOCKERREGISTRY}/${APP}:${VERSION}-${TARGETARCH}
