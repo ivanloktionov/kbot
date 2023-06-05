@@ -5,11 +5,13 @@
 replicaCount: 1
 
 image:
-  repository: 0108997
+  repository: "0108997"
   tag: "v1.0.0-1c8521f"
-
+  arch: "amd64"
 secret:
-  name: kbot
-  tokenKey: token
-  tokenName: TELE_TOKEN
+  name: "kbot"
+  env: "TELE_TOKEN"
+  key: "token"
+securityContext:
+  privileged: true
 
