@@ -25,7 +25,7 @@ jobs:
           APP: "kbot"
           REGISTRY: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.ghp_for_dockerhub }}
         run: make image push TARGETARCH=$TARGETARCH
       - name: Clean
         run: make clean TARGETARCH=$TARGETARCH
