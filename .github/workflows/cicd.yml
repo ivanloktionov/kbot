@@ -28,9 +28,7 @@ jobs:
       - name: Build&Push
         env:
           APP: "kbot"
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          REGISTRY: ${{ secrets.DOCKERHUB_USERNAME }}
         run: make image push TARGETARCH=$TARGETARCH
       - name: Clean
         run: make clean TARGETARCH=$TARGETARCH
