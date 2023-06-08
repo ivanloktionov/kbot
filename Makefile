@@ -2,7 +2,7 @@ APP=$(shell basename $(shell git remote get-url origin))
 DOCKERREGISTRY=ghcr.io/ivanloktionov
 VERSION=v$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
 TARGETOS=linux
-TARGETARCH=arm64
+TARGETARCH=amd64
 
 format:
 	gofmt -s -w ./
