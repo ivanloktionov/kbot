@@ -32,9 +32,9 @@ jobs:
           REGISTRY: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.ghp_for_dockerhub }}
-        run: make image push TARGETARCH=$TARGETARCH
+        run: make image push 
       - name: Clean
-        run: make clean TARGETARCH=$TARGETARCH
+        run: make clean
       
   cd:
     name: CD
