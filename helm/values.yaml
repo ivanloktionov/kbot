@@ -5,7 +5,7 @@
 replicaCount: 1
 image:
   repository: "ivanloktionov"
-  tag: "2.0.0-4e4c94a"
+  tag: "v1.0.0-f149f91"
   arch: "amd64"
 secret:
   name: "kbot"
