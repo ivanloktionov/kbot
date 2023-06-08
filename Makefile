@@ -1,6 +1,6 @@
 APP=$(shell basename $(shell git remote get-url origin))
 DOCKERREGISTRY=ghcr.io/ivanloktionov
-VERSION=v$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
+VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
 TARGETOS=linux
 TARGETARCH=amd64
 
