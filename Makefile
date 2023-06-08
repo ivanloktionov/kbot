@@ -1,5 +1,5 @@
 APP=$(shell basename $(shell git remote get-url origin))
-DOCKERREGISTRY=0108997
+DOCKERREGISTRY=ivanloktionov
 VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
 TARGETOS=linux
 TARGETARCH=arm64
@@ -33,10 +33,10 @@ build: format
     CGO_ENABLED=0 GOARCH=${shell dpkg --print-architecture} go build -v -o kbot -ldflags "-X="github.com/ivanloktionov/kbot/cmd.appVersion=${VERSION}
 
 image: 
-	docker build . -t ${DOCKERREGISTRY}/${APP}:${VERSION}-${TARGETARCH}
+	docker build . -t ghcr.io/${DOCKERREGISTRY}/${APP}:${VERSION}-${TARGETARCH}
 
 push: 
-	docker push ${DOCKERREGISTRY}/${APP}:${VERSION}-${TARGETARCH}
+	docker push ghcr.io/${DOCKERREGISTRY}/${APP}:${VERSION}-${TARGETARCH}
 
 clean:
 	rm -rf kbot
