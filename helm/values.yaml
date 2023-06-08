@@ -5,7 +5,7 @@
 replicaCount: 1
 image:
   repository: "0108997"
-  tag: "2.0.0-2a6d6a4"
+  tag: "2.0.0-677c2b1"
   arch: "amd64"
 secret:
   name: "kbot"
