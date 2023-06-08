@@ -40,8 +40,5 @@ push:
 
 clean:
 	rm -rf kbot
-<<<<<<< HEAD
-	docker image ls | grep -v REPOSITORY| awk '{print $3}'| head -1|xargs docker rmi -f
-=======
+
 	docker image ls | grep -v REPOSITORY| tr -s ' '|cut -f 3 -d ' '| head -1
->>>>>>> f0302dfe4b346e873285d572c289f51d62c1f4f6
