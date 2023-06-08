@@ -33,7 +33,7 @@ build: format
     CGO_ENABLED=0 GOARCH=${shell dpkg --print-architecture} go build -v -o kbot -ldflags "-X="github.com/ivanloktionov/kbot/cmd.appVersion=${VERSION}
 
 image: 
-	docker build . -t ${REGISTRY}/${APP}:${VERSION}-${TARGETOS}-${TARGETARCH} 
+	docker build . -t ${DOCKERREGISTRY}/${APP}:${VERSION}-${TARGETOS}-${TARGETARCH} 
 
 push: 
 	docker push ghcr.io/${DOCKERREGISTRY}/${APP}:${VERSION}-${TARGETOS}-${TARGETARCH}
