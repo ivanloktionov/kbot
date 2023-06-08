@@ -1,6 +1,9 @@
 name: KBOT-CICD
 
-on: push
+on:
+  push:
+    branches:  
+    - 'develop'
 
 env:
   TARGETARCH: amd64
@@ -18,14 +21,17 @@ jobs:
           fetch-depth: 0
 
       - name: Run test
-        run: make test
-
+        run: make test; 
+        
+      - name: Run login
+        run: echo ${{ secrets.ghp_for_dockerhub }} | docker login ghcr.io -u ivanloktionov --password-stdin
+     
       - name: Build&Push
         env:
           APP: "kbot"
           REGISTRY: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.ghp_for_dockerhub }}
         run: make image push TARGETARCH=$TARGETARCH
       - name: Clean
         run: make clean TARGETARCH=$TARGETARCH
