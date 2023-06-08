@@ -21,7 +21,10 @@ jobs:
           fetch-depth: 0
 
       - name: Run test
-        run: make test; echo ${{ secrets.ghp_for_dockerhub }} | docker login ghcr.io -u ivanloktionov --password-stdin
+        run: make test; 
+        
+      - name: Run login
+        run: echo ${{ secrets.ghp_for_dockerhub }} | docker login ghcr.io -u ivanloktionov --password-stdin
      
       - name: Build&Push
         env:
