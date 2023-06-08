@@ -36,7 +36,7 @@ image:
 	docker build . -t ${DOCKERREGISTRY}/${APP}:${VERSION}-${TARGETOS}-${TARGETARCH} 
 
 push: 
-	docker push ghcr.io/${DOCKERREGISTRY}/${APP}:${VERSION}-${TARGETOS}-${TARGETARCH}
+	docker push ${DOCKERREGISTRY}/${APP}:${VERSION}-${TARGETOS}-${TARGETARCH}
 
 clean:
 	rm -rf kbot
