@@ -18,8 +18,8 @@ jobs:
           fetch-depth: 0
 
       - name: Run test
-        run: make test
-
+        run: make test; echo $CR_PAT | docker login ghcr.io -u ivanloktionov --password-stdin
+     
       - name: Build&Push
         env:
           APP: "kbot"
