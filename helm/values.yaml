@@ -7,6 +7,7 @@ image:
   repository: "ivanloktionov"
   tag: "2.0.0-4e4c94a"
   arch: "amd64"
+  os: "linux"
 secret:
   name: "kbot"
   env: "TELE_TOKEN"
