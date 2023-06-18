@@ -5,7 +5,7 @@
 replicaCount: 1
 image:
   repository: "ivanloktionov"
-  tag: "v1.0.0-92397f9"
+  tag: "v1.0.0-85f17ea"
   arch: "amd64"
   os: "linux"
 secret:
