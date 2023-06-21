@@ -5,7 +5,7 @@
 replicaCount: 1
 image:
   repository: "ghcr.io/ivanloktionov"
-  tag: "v1.0.0-1ac8b54"
+  tag: "7.0.0-9d7ea5d"
   arch: "amd64"
   os: "linux"
 secret:
