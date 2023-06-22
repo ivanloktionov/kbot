@@ -8,6 +8,7 @@ image:
   tag: "7.0.0-7f0d22b"
   arch: "amd64"
   os: "linux"
+  repo: "kbot"
 secret:
   name: "kbot"
   env: "TELE_TOKEN"
