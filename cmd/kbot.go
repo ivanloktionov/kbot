@@ -1,6 +1,3 @@
-/*
-Copyright © 2023 NAME HERE den.vasyliev@gmail.com
-*/
 package cmd
 
 import (
