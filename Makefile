@@ -29,7 +29,7 @@ macos:
 windows:
 	GOARCH=amd64 GOOS=windows go build -o kbot-windows main.go
 
-build: format
+build: format get
     CGO_ENABLED=0 GOARCH=${shell dpkg --print-architecture} go build -v -o kbot -ldflags "-X="github.com/ivanloktionov/kbot/cmd.appVersion=${VERSION}
 
 image: 
