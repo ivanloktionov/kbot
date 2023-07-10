@@ -15,7 +15,7 @@ Link monitor telebot - telegram bot that receives URL and starts monitoring it i
 ## Install via docker
 
 1. Add telebot token using read -s TELE_TOKEN
-2. Docker run: docker run -e "`echo -n TELE_TOKEN=$TELE_TOKEN`" ghcr.io/ivanloktionov/kbot.git:latest
+2. Docker run: docker run -e "`echo -n TELE_TOKEN=$TELE_TOKEN`" ghcr.io/ivanloktionov/kbot:v4.0.0-f2c91c1-linux-amd64
 
 ## Example of user interaction with telebot
 
