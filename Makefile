@@ -30,7 +30,7 @@ windows:
 	GOARCH=amd64 GOOS=windows go build -o kbot-windows main.go
 
 build: format get
-    CGO_ENABLED=0 GOARCH=${shell dpkg --print-architecture} go build -v -o kbot -ldflags "-X="github.com/ivanloktionov/kbot/cmd.appVersion=${VERSION}
+	CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build -v -o kbot -ldflags "-X="github.com/ivanloktionov/kbot/cmd.appVersion=${VERSION}
 
 image: 
 	docker build . -t ${DOCKERREGISTRY}/${APP}:${VERSION}-${TARGETOS}-${TARGETARCH} 
@@ -40,5 +40,4 @@ push:
 
 clean:
 	rm -rf kbot
-
-	docker image ls | grep -v REPOSITORY| tr -s ' '|cut -f 3 -d ' '| head -1
+	docker rmi ${REGISTRY}/${APP}:${VERSION}-${TARGETARCH}
