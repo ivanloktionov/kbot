@@ -5,7 +5,7 @@
 replicaCount: 1
 image:
   repository: "ghcr.io/ivanloktionov"
-  tag: "v4.0.0-e816da0"
+  tag: "v4.0.0-f2c91c1"
   arch: "amd64"
   os: "linux"
   repo: "kbot"
