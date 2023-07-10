@@ -6,13 +6,11 @@ Link monitor telebot - telegram bot that receives URL and starts monitoring it i
 
 ## Download via GitHub
 
-
-1, Upload the telebot using the repository https://github.com/ivanloktionov/kbot
+1. Upload the telebot using the repository https://github.com/ivanloktionov/kbot
 2. Add telebot token using read -s TELE_TOKEN
 3. Run the binary file: ./kbot start
 
-
-Note: using this method some dependencies should be installed
+### Note: using this method some dependencies should be installed
 
 ## Install via docker
 
