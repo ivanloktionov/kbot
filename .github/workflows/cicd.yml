@@ -3,7 +3,7 @@ name: KBOT-CICD
 on:
   push:
     branches:
-      - dev
+      - main
 
 env:
   TARGETARCH: amd64
