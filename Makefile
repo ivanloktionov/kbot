@@ -41,4 +41,4 @@ push:
 clean:
 	rm -rf kbot
         
-	docker rmi ${REGISTRY}/${APP}:${VERSION}-${TARGETOS}-${TARGETARCH}
+	docker rmi ${DOCKERREGISTRY}/${APP}:${VERSION}-${TARGETOS}-${TARGETARCH}
